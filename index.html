@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-based AR Application</title>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.6/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- AR Marker -->
+        <a-marker preset="hiro">
+            <!-- Environmental Data (Bars) -->
+            <a-entity position="0 0.5 0">
+                <!-- Bars with Different Colors -->
+                <a-entity position="-0.4 0.5 0" scale="0.2 1 1">
+                    <!-- Bar 1: Temperature (22°C) - Orange -->
+                    <a-box height="0.7" depth="0.1" color="orange" position="-1 0.35 0"></a-box>
+                    <a-text value="22°C" align="center" width="2" position="-1 0.35 -0.06" rotation="0 0 0" color="black"></a-text>
+
+                    <!-- Bar 2: Humidity (65%) - Teal -->
+                    <a-box height="0.8" depth="0.1" color="teal" position="0 0.4 0"></a-box>
+                    <a-text value="65%" align="center" width="2" position="0 0.4 -0.06" rotation="0 0 0" color="black"></a-text>
+
+                    <!-- Bar 3: Air Quality (42 AQI) - Magenta -->
+                    <a-box height="0.6" depth="0.1" color="magenta" position="1 0.3 0"></a-box>
+                    <a-text value="42 AQI" align="center" width="2" position="1 0.3 -0.06" rotation="0 0 0" color="black"></a-text>
+
+                    <!-- Bar 4: Noise Level (55 dB) - Lime Green -->
+                    <a-box height="0.5" depth="0.1" color="lime" position="2 0.25 0"></a-box>
+                    <a-text value="55 dB" align="center" width="2" position="2 0.25 -0.06" rotation="0 0 0" color="black"></a-text>
+
+                    <!-- Bar 5: Light Intensity (750 lux) - Cyan -->
+                    <a-box height="0.9" depth="0.1" color="cyan" position="3 0.45 0"></a-box>
+                    <a-text value="750 lux" align="center" width="2" position="3 0.45 -0.06" rotation="0 0 0" color="black"></a-text>
+                </a-entity>
+            </a-entity>
+
+            <!-- Decorative Elements -->
+            <!-- Floor -->
+            <a-plane rotation="-90 0 0" width="20" height="20" color="#000000"></a-plane>
+            <!-- Ambient Light -->
+            <a-light type="ambient" color="#FFF"></a-light>
+        </a-marker>
+
+        <!-- Camera -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
